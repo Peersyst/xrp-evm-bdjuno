@@ -54,7 +54,7 @@ Validator related data:
 - [x] [x/staking] Calculate average delegation ratio (per hour, per day) *
 - [x] [x/staking] Calculate voting power distribution (per hour) *
 
-\* These should be doable using the `average` method inside GraphQL
+These should be doable using the `average` method inside GraphQL
 
 ## Not on Big Dipper now but we are considering to add
 
