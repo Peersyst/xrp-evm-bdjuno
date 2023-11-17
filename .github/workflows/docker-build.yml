@@ -58,5 +58,5 @@ jobs:
           file: "./${{ env.DOCKERFILE }}"
           push: true
           build-args: |
-            GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
+            GITHUB_TOKEN=${{ secrets.PAT_READ_EXRP }}
           tags: ${{ steps.prep.outputs.tags }}
