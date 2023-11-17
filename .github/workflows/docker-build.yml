@@ -26,7 +26,7 @@ jobs:
         name: Prepare tags
         id: prep
         run: |
-          DOCKER_IMAGE=${{ secrets.DOCKERHUB_BDJUNO_REPO }}
+          DOCKER_IMAGE=${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}
           CHAIN_NAME="${{env.CHAIN_NAME}}"
           VERSION="${{env.GITHUB_VERSION}}"
           TAGS="${DOCKER_IMAGE}:${CHAIN_NAME}-${VERSION}"
