@@ -3,8 +3,9 @@ module github.com/forbole/bdjuno/v4
 go 1.19
 
 require (
-	cosmossdk.io/math v1.0.0-rc.0
+	cosmossdk.io/math v1.0.1
 	github.com/Peersyst/exrp v1.0.0-beta.0
+	github.com/cometbft/cometbft v0.37.1
 	github.com/cosmos/cosmos-sdk v0.46.12
 	github.com/forbole/juno/v4 v4.1.1-0.20230503093602-557aa8d187e0
 	github.com/go-co-op/gocron v1.18.0
@@ -45,7 +46,6 @@ require (
 	github.com/cespare/xxhash/v2 v2.2.0 // indirect
 	github.com/chzyer/readline v0.0.0-20180603132655-2972be24d48e // indirect
 	github.com/cockroachdb/apd/v2 v2.0.2 // indirect
-	github.com/cometbft/cometbft v0.37.1 // indirect
 	github.com/confio/ics23/go v0.9.0 // indirect
 	github.com/cosmos/btcutil v1.0.5 // indirect
 	github.com/cosmos/cosmos-proto v1.0.0-beta.3 // indirect
@@ -191,5 +191,6 @@ replace (
 	github.com/gogo/protobuf => github.com/regen-network/protobuf v1.3.3-alpha.regen.1
 
 	// use informal system fork of tendermint
+	github.com/syndtr/goleveldb => github.com/syndtr/goleveldb v1.0.1-0.20210819022825-2ae1ddf74ef7
 	github.com/tendermint/tendermint => github.com/cometbft/cometbft v0.34.29
 )
