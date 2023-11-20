@@ -7,6 +7,7 @@ require (
 	github.com/Peersyst/exrp v1.0.0-beta.0
 	github.com/cometbft/cometbft v0.37.1
 	github.com/cosmos/cosmos-sdk v0.46.12
+	github.com/evmos/ethermint v0.22.0
 	github.com/forbole/juno/v4 v4.1.1-0.20230503093602-557aa8d187e0
 	github.com/go-co-op/gocron v1.18.0
 	github.com/gogo/protobuf v1.3.3
@@ -66,7 +67,6 @@ require (
 	github.com/dvsekhvalnov/jose2go v1.5.0 // indirect
 	github.com/edsrzf/mmap-go v1.0.0 // indirect
 	github.com/ethereum/go-ethereum v1.10.26 // indirect
-	github.com/evmos/ethermint v0.22.0 // indirect
 	github.com/felixge/httpsnoop v1.0.2 // indirect
 	github.com/fsnotify/fsnotify v1.6.0 // indirect
 	github.com/gballet/go-libpcsclite v0.0.0-20190607065134-2772fd86a8ff // indirect
