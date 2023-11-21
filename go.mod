@@ -4,7 +4,7 @@ go 1.19
 
 require (
 	cosmossdk.io/math v1.0.1
-	github.com/Peersyst/exrp v1.0.0-beta.0
+	github.com/Peersyst/exrp v1.0.0-beta.0.0.20231121084500-6d7e5cc318bd
 	github.com/cometbft/cometbft v0.37.1
 	github.com/cosmos/cosmos-sdk v0.46.12
 	github.com/evmos/ethermint v0.22.0
