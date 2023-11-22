@@ -151,7 +151,7 @@ func (m *Module) handleMsgSubmitProposalV1(tx *juno.Tx, index int, msg *govtypes
 		msg.Type(),
 		govtypesv1beta1.NewTextProposal(
 			fmt.Sprintf("%d - %s", proposal.Id, messages[1:]),
-			fmt.Sprintf("- Proposal messages: \n%s\n\n - Proposal metadata: %s", string(proposalMessages), proposal.Metadata),
+			fmt.Sprintf("- Proposal messages: \n%s\n\n- Proposal metadata: %s", string(proposalMessages), proposal.Metadata),
 		),
 		proposal.Status.String(),
 		*proposal.SubmitTime,
