@@ -1,6 +1,7 @@
 package gov
 
 import (
+	"encoding/json"
 	"fmt"
 	"time"
 
@@ -118,6 +119,20 @@ func (m *Module) handleMsgSubmitProposalV1(tx *juno.Tx, index int, msg *govtypes
 	if err != nil {
 		return fmt.Errorf("error while getting proposal: %s", err)
 	}
+
+	var rawPorposalMessages = make([]interface{}, len(proposal.Messages))
+	for i, message := range(proposal.Messages) {
+		messageBytes := m.cdc.MustMarshalJSON(message)
+		var messageIface interface{}
+		if err := json.Unmarshal(messageBytes, &messageIface); err != nil {
+			continue
+		}
+		rawPorposalMessages[i] = messageIface
+	}
+	proposalMessages, err := json.MarshalIndent(rawPorposalMessages, "", "    ")
+	if err != nil {
+		proposalMessages = []byte{}
+	}
 	
 	votingStartTime := time.Unix(0, 0)
 	if proposal.VotingStartTime != nil {
@@ -134,7 +149,10 @@ func (m *Module) handleMsgSubmitProposalV1(tx *juno.Tx, index int, msg *govtypes
 		proposal.Id,
 		msg.Route(),
 		msg.Type(),
-		govtypesv1beta1.NewTextProposal(fmt.Sprintf("%d - %s", proposal.Id, messages[1:]), proposal.Metadata),
+		govtypesv1beta1.NewTextProposal(
+			fmt.Sprintf("%d - %s", proposal.Id, messages[1:]),
+			fmt.Sprintf("- Proposal messages: \n%s\n\n - Proposal metadata: %s", string(proposalMessages), proposal.Metadata),
+		),
 		proposal.Status.String(),
 		*proposal.SubmitTime,
 		*proposal.DepositEndTime,
